@@ -16,4 +16,4 @@ Agent 007 (`bond`) and the Quartermaster (`q`) need a shared workspace to develo
 - `usermod -aG [group] [user]`: Adds a user to a group.
 - `chgrp [group] [path]`: Changes group ownership.
 
-<instruqt-task id="setup_group"></instruqt-task>
+<instruqt-task id="group_collab"></instruqt-task>

@@ -15,4 +15,4 @@ We have a situation. A field report, `mission_report.txt`, was uploaded to the m
 - `ls -l [filename]`: Lists file details, including owner (3rd column) and group (4th column).
 - `chown [user] [filename]`: Changes the user ownership of a file.
 
-<instruqt-task id="assign_asset"></instruqt-task>
+<instruqt-task id="fix_ownership"></instruqt-task>

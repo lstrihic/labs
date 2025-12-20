@@ -10,4 +10,4 @@ The developers uploaded it with read/write permissions, but forgot the most impo
 2.  Add the **execute (+x)** permission to the script so it can be run.
 3.  Test it by running `./launch_missile.sh`.
 
-<instruqt-task id="fix_script"></instruqt-task>
+<instruqt-task id="make_executable"></instruqt-task>

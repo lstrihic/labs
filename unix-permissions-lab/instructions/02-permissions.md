@@ -21,4 +21,4 @@ Secure `/agency/top_secret.txt` so that:
 - The **Group** has NO access (0).
 - **Others** have NO access (0).
 
-<instruqt-task id="secure_intel"></instruqt-task>
+<instruqt-task id="secure_file"></instruqt-task>
