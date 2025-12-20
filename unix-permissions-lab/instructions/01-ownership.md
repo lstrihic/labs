@@ -10,9 +10,14 @@ We have a situation. A field report, `mission_report.txt`, was uploaded to the m
 2.  Check the current owner of the file using `ls -l`.
 3.  Change the ownership of `mission_report.txt` to user `bond`.
 
-### Command Reference
+<details>
+<summary><strong>Stuck? Click for a Hint</strong></summary>
 
-- `ls -l [filename]`: Lists file details, including owner (3rd column) and group (4th column).
-- `chown [user] [filename]`: Changes the user ownership of a file.
+Use the `chown` command syntax:
+`chown NEW_OWNER FILENAME`
 
-<instruqt-task id="fix_ownership"></instruqt-task>
+Example: `chown alice file.txt`
+
+</details>
+
+<instruqt-task id="assign_asset"></instruqt-task>

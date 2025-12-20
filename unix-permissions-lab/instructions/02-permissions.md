@@ -21,4 +21,16 @@ Secure `/agency/top_secret.txt` so that:
 - The **Group** has NO access (0).
 - **Others** have NO access (0).
 
-<instruqt-task id="secure_file"></instruqt-task>
+<details>
+<summary><strong>Stuck? Click for a Hint</strong></summary>
+
+You need to calculate the octal permission code.
+Owner: Read(4) + Write(2) = 6
+Group: 0
+Others: 0
+
+Combine them to get `600`. Use `chmod` to apply it.
+
+</details>
+
+<instruqt-task id="secure_intel"></instruqt-task>

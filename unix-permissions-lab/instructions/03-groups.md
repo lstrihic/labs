@@ -10,10 +10,18 @@ Agent 007 (`bond`) and the Quartermaster (`q`) need a shared workspace to develo
 4.  Change the group ownership of that directory to `q-branch`.
 5.  Set permissions to `770` (Owner and Group have full control, Others have none).
 
-### Command Reference
+<details>
+<summary><strong>Hint: Adding Users</strong></summary>
 
-- `groupadd [groupname]`: Creates a new group.
-- `usermod -aG [group] [user]`: Adds a user to a group.
-- `chgrp [group] [path]`: Changes group ownership.
+Use `usermod -aG GROUP USER` to add a user to a group without removing them from other groups.
 
-<instruqt-task id="group_collab"></instruqt-task>
+</details>
+
+<details>
+<summary><strong>Hint: Folder Ownership</strong></summary>
+
+Use `chgrp GROUPNAME DIRECTORY` to change the group ownership.
+
+</details>
+
+<instruqt-task id="setup_group"></instruqt-task>
