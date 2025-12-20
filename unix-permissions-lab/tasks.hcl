@@ -1,67 +1,93 @@
-resource "task" "task_01" {
-  description = "Change the owner of 'secret.txt' to 'lab-user'"
-
+# TASK 1: Ownership (chown)
+resource "task" "fix_ownership" {
+  description = "Assign the mission report to Agent 007"
+  
   config {
-    target = resource.container.shell
+    target = resource.container.mainframe
   }
 
-  condition "ownership_correct" {
-    description = "Check if 'secret.txt' is owned by 'lab-user'"
+  condition "file_owned" {
+    description = "Change ownership of /agency/mission_report.txt to user 'bond'"
+    
+    # Corrected: Reference the local file path, not the path inside container
+    setup {
+      script = "files/setup-agents.sh"
+    }
 
     check {
-      script          = "scripts/task-01/check.sh"
-      failure_message = "The file 'secret.txt' is not owned by 'lab-user'."
+      script = "scripts/task-01/check.sh"
+      failure_message = "The file is not owned by agent 'bond'."
     }
   }
 }
 
-resource "task" "task_02" {
-  description = "Set 'secret.txt' permissions to 600 (read/write for owner only)"
-
+# TASK 2: Permissions (chmod)
+resource "task" "secure_file" {
+  description = "Lock down the top secret dossier"
+  
   config {
-    target = resource.container.shell
+    target = resource.container.mainframe
   }
 
-  condition "permissions_correct" {
-    description = "Check if 'secret.txt' has 600 permissions"
+  condition "permissions_set" {
+    description = "Set permissions on /agency/top_secret.txt so ONLY the owner can read/write it (600)"
+    
+    # Corrected: Moved inline script to a file
+    setup {
+      script = "scripts/task-02/setup.sh"
+    }
 
     check {
-      script          = "scripts/task-02/check.sh"
-      failure_message = "The permissions for 'secret.txt' are not set to 600."
+      script = "scripts/task-02/check.sh"
+      failure_message = "Permissions are too loose! Ensure only the owner has read/write access."
     }
   }
 }
 
-resource "task" "task_03" {
-  description = "Change the group of 'shared.txt' to 'developers'"
-
+# TASK 3: Groups (groupadd, chgrp, chmod g+s)
+resource "task" "group_collab" {
+  description = "Create a shared gadget workspace"
+  
   config {
-    target = resource.container.shell
+    target = resource.container.mainframe
   }
 
-  condition "group_correct" {
-    description = "Check if 'shared.txt' belongs to the 'developers' group"
-
+  condition "group_created" {
+    description = "Create a group named 'q-branch' and add users 'bond' and 'q' to it"
+    
     check {
-      script          = "scripts/task-03/check.sh"
-      failure_message = "The group for 'shared.txt' is not 'developers'."
+      script = "scripts/task-03/check_group.sh"
+    }
+  }
+
+  condition "folder_setup" {
+    description = "Create directory /agency/gadgets, set group owner to 'q-branch', and ensure group members have full access (770)"
+    
+    check {
+      script = "scripts/task-03/check_folder.sh"
     }
   }
 }
 
-resource "task" "task_04" {
-  description = "Make 'run_me.sh' executable"
-
+# TASK 4: Execution (chmod +x)
+resource "task" "make_executable" {
+  description = "Prepare the launch script"
+  
   config {
-    target = resource.container.shell
+    target = resource.container.mainframe
   }
 
-  condition "execution_correct" {
-    description = "Check if 'run_me.sh' is executable"
+  condition "is_executable" {
+    description = "Make /agency/launch_missile.sh executable"
+    
+    # Corrected: Moved inline script to a file
+    setup {
+      script = "scripts/task-04/setup.sh"
+    }
 
     check {
-      script          = "scripts/task-04/check.sh"
-      failure_message = "The file 'run_me.sh' is not executable."
+      script = "scripts/task-04/check.sh"
+      failure_message = "The script does not have execution permissions."
     }
   }
 }

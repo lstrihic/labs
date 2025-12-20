@@ -1,35 +1,35 @@
 resource "page" "ownership" {
-  title = "File Ownership"
+  title = "Phase 1: Ownership"
   file  = "instructions/01-ownership.md"
-
+  
   activities = {
-    task = resource.task.task_01
+    assign_asset = resource.task.fix_ownership
   }
 }
 
 resource "page" "permissions" {
-  title = "File Permissions"
+  title = "Phase 2: Permissions"
   file  = "instructions/02-permissions.md"
-
+  
   activities = {
-    task = resource.task.task_02
+    secure_intel = resource.task.secure_file
   }
 }
 
 resource "page" "groups" {
-  title = "Group Management"
+  title = "Phase 3: Groups"
   file  = "instructions/03-groups.md"
-
+  
   activities = {
-    task = resource.task.task_03
+    setup_group = resource.task.group_collab
   }
 }
 
 resource "page" "execution" {
-  title = "Execution Bits"
+  title = "Phase 4: Execution"
   file  = "instructions/04-execution.md"
-
+  
   activities = {
-    task = resource.task.task_04
+    fix_script = resource.task.make_executable
   }
 }

@@ -1,9 +1,7 @@
 #!/bin/bash
+OWNER=$(stat -c '%U' /agency/mission_report.txt)
 
-# Task 01 Check: Owner of secret.txt should be lab-user
-OWNER=$(stat -c '%U' /home/lab-user/secret.txt)
-
-if [ "$OWNER" == "lab-user" ]; then
+if [ "$OWNER" == "bond" ]; then
   exit 0
 else
   exit 1

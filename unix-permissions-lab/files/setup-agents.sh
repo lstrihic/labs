@@ -1,30 +1,13 @@
 #!/bin/bash
+# Create the agency directory
+mkdir -p /agency
 
-# Create lab-user
-useradd -m -s /bin/bash lab-user
-echo "lab-user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+# Create users if they don't exist
+id -u bond &>/dev/null || useradd -m -s /bin/bash bond
+id -u q &>/dev/null || useradd -m -s /bin/bash q
+id -u m &>/dev/null || useradd -m -s /bin/bash m
 
-# Set up files in lab-user's home
-cd /home/lab-user
-
-# Task 01: secret.txt owned by root initially
-touch secret.txt
-chown root:root secret.txt
-chmod 644 secret.txt
-
-# Task 03: shared.txt and developers group
-groupadd developers
-touch shared.txt
-chown lab-user:root shared.txt
-
-# Task 04: run_me.sh
-cat <<EOF > run_me.sh
-#!/bin/bash
-echo "Hello, Unix Permissions!"
-EOF
-chown lab-user:lab-user run_me.sh
-chmod 644 run_me.sh
-
-# Fix ownership for the home directory
-chown lab-user:lab-user /home/lab-user
-chown root:root /home/lab-user/secret.txt # Ownership check task needs it to be root initially
+# Create a file owned by root (the problem)
+echo "Mission Report: Success" > /agency/mission_report.txt
+chown root:root /agency/mission_report.txt
+chmod 644 /agency/mission_report.txt

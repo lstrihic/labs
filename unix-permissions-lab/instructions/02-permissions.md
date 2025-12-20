@@ -1,24 +1,24 @@
-# File Permissions
+# Phase 2: Eyes Only
 
-Unix permissions are divided into three categories: **Owner**, **Group**, and **Others**.
-Each category can have **Read (r)**, **Write (w)**, and **Execute (x)** permissions.
+Excellent work on the transfer. Now, we have a security breach risk.
 
-You can set permissions using `chmod`. Numerical notation is common:
+The file `/agency/top_secret.txt` currently has permissions set to `777`. In Unix terms, this means **everyone** can read, write, and execute it. This is unacceptable for classified intel.
 
-- 4: Read
-- 2: Write
-- 1: Execute
+## Understanding Permissions
 
-Example: `600` means:
+Permissions are defined for three scopes: **U**ser (Owner), **G**roup, and **O**thers.
+Values are calculated using octal numbers:
 
-- Owner: 4 (Read) + 2 (Write) = 6
-- Group: 0
-- Others: 0
+- **Read (r)** = 4
+- **Write (w)** = 2
+- **Execute (x)** = 1
 
-### Task
+## Your Task
 
-Set the permissions of `secret.txt` so that only the owner can read and write to it (600).
+Secure `/agency/top_secret.txt` so that:
 
-```bash
-chmod 600 secret.txt
-```
+- The **Owner** has Read and Write access (4+2=6).
+- The **Group** has NO access (0).
+- **Others** have NO access (0).
+
+<instruqt-task id="secure_intel"></instruqt-task>

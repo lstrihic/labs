@@ -1,29 +1,43 @@
 resource "lab" "unix_permissions" {
-  title       = "Unix Permissions Mastery"
-  description = "Learn the fundamentals of Unix file ownership, permissions, and group management."
-  layout      = resource.layout.main_layout
+  title       = "Operation: Permission Impossible"
+  description = "Master Unix file permissions, ownership, and groups to secure the Secret Agency mainframe."
+  tags        = ["linux", "security", "permissions", "bash"]
+  
+  layout = resource.layout.standard
 
   content {
-    chapter "fundamentals" {
-      title = "Unix Permissions Fundamentals"
-
-      page "ownership_page" {
-        title     = "File Ownership"
+    chapter "basics" {
+      title = "Phase 1: Chain of Command"
+      
+      page "ownership" {
+        title     = "Assigning Assets"
         reference = resource.page.ownership
       }
+    }
 
-      page "permissions_page" {
-        title     = "File Permissions"
+    chapter "security" {
+      title = "Phase 2: Eyes Only"
+      
+      page "permissions" {
+        title     = "Classified Intel"
         reference = resource.page.permissions
       }
+    }
 
-      page "groups_page" {
-        title     = "Group Management"
+    chapter "collaboration" {
+      title = "Phase 3: Q-Branch Collaboration"
+      
+      page "groups" {
+        title     = "Shared Gadgets"
         reference = resource.page.groups
       }
+    }
 
-      page "execution_page" {
-        title     = "Execution Bits"
+    chapter "execution" {
+      title = "Phase 4: Mission Go"
+      
+      page "execution" {
+        title     = "Launch Sequence"
         reference = resource.page.execution
       }
     }

@@ -1,9 +1,8 @@
 #!/bin/bash
+PERMS=$(stat -c '%a' /agency/top_secret.txt)
 
-# Task 02 Check: Permissions of secret.txt should be 600
-PERMS=$(stat -c '%a' /home/lab-user/secret.txt)
-
-if [ "$PERMS" == "600" ]; then
+# Accept 600 or 0600
+if [[ "$PERMS" == "600" || "$PERMS" == "0600" ]]; then
   exit 0
 else
   exit 1

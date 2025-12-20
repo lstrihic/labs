@@ -1,11 +1,19 @@
-# Group Management
+# Phase 3: Q-Branch Collaboration
 
-Files belong to a group, allowing multiple users in that group to share access. Use `chgrp` to change a file's group.
+Agent 007 (`bond`) and the Quartermaster (`q`) need a shared workspace to develop digital gadgets. We need to create a secure drop box where both of them have full access, but regular agents (`m` or others) cannot see inside.
 
-### Task
+## Your Task
 
-Change the group of `shared.txt` to the `developers` group.
+1.  Create a new group called `q-branch`.
+2.  Add user `bond` and user `q` to this new group.
+3.  Create a directory `/agency/gadgets`.
+4.  Change the group ownership of that directory to `q-branch`.
+5.  Set permissions to `770` (Owner and Group have full control, Others have none).
 
-```bash
-sudo chgrp developers shared.txt
-```
+### Command Reference
+
+- `groupadd [groupname]`: Creates a new group.
+- `usermod -aG [group] [user]`: Adds a user to a group.
+- `chgrp [group] [path]`: Changes group ownership.
+
+<instruqt-task id="setup_group"></instruqt-task>

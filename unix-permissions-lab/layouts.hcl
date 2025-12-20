@@ -1,15 +1,18 @@
-resource "layout" "main_layout" {
+resource "layout" "standard" {
   column {
     width = "40"
-    instructions {}
+    
+    instructions {
+      title = "Mission Briefing"
+    }
   }
 
   column {
     width = "60"
+    
     tab "terminal" {
-      target = resource.terminal.main_terminal
-      title  = "Ubuntu Terminal"
-      active = true
+      title    = "Mainframe Terminal"
+      target   = resource.terminal.console
     }
   }
 }

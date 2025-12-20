@@ -1,11 +1,13 @@
-# Execution Bits
+# Phase 4: Mission Go
 
-For a script or program to run, it must have the execute bit (`x`) set.
+The satellite uplink is ready. However, the automated launch script `/agency/launch_missile.sh` is failing to start.
 
-### Task
+The developers uploaded it with read/write permissions, but forgot the most important bit for a script: the **Execute** bit.
 
-The file `run_me.sh` is a script, but it's not executable. Make it executable for everyone.
+## Your Task
 
-```bash
-chmod +x run_me.sh
-```
+1.  Verify the script exists in `/agency`.
+2.  Add the **execute (+x)** permission to the script so it can be run.
+3.  Test it by running `./launch_missile.sh`.
+
+<instruqt-task id="fix_script"></instruqt-task>

@@ -1,5 +1,5 @@
-resource "terminal" "main_terminal" {
-  target            = resource.container.shell
-  working_directory = "/home/lab-user"
-  shell             = "/bin/bash"
+resource "terminal" "console" {
+  target = resource.container.mainframe
+  shell  = "/bin/bash"
+  user   = "root"
 }

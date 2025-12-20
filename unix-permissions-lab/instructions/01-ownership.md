@@ -1,20 +1,18 @@
-# File Ownership
+# Phase 1: Chain of Command
 
-In Unix-like systems, every file and directory is owned by a user and a group. You can see ownership using the `ls -l` command.
+Welcome to the Agency, Administrator.
 
-```bash
-ls -l secret.txt
-```
+We have a situation. A field report, `mission_report.txt`, was uploaded to the mainframe by the root system, but it actually belongs to **Agent 007 (user: bond)**. He cannot edit it because he doesn't own it.
 
-The output looks like this:
-`-rw-r--r-- 1 root root 0 Dec 20 12:34 secret.txt`
+## Your Task
 
-The first `root` is the owner, and the second `root` is the group.
+1.  Navigate to the agency directory: `cd /agency`
+2.  Check the current owner of the file using `ls -l`.
+3.  Change the ownership of `mission_report.txt` to user `bond`.
 
-### Task
+### Command Reference
 
-Currently, `secret.txt` is owned by `root`. Change its owner to `lab-user`.
+- `ls -l [filename]`: Lists file details, including owner (3rd column) and group (4th column).
+- `chown [user] [filename]`: Changes the user ownership of a file.
 
-```bash
-sudo chown lab-user secret.txt
-```
+<instruqt-task id="assign_asset"></instruqt-task>
