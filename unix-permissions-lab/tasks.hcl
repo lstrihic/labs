@@ -10,7 +10,7 @@ resource "task" "fix_ownership" {
     description = "Change ownership of /agency/mission_report.txt to user 'bond'"
     
     setup {
-      script = "files/setup-agents.sh"
+      script = "scripts/task-01/setup.sh"
     }
 
     check {
