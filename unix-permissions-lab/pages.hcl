@@ -8,7 +8,7 @@ resource "page" "ownership" {
 }
 
 resource "page" "permissions" {
-  title = "Phase 2: Permissions"
+  title = "Phase 2: Permissions "
   file  = "instructions/02-permissions.md"
   
   activities = {
