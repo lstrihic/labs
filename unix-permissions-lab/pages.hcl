@@ -17,7 +17,7 @@ resource "page" "permissions" {
 }
 
 resource "page" "groups" {
-  title = "Phase 3: Groups"
+  title = "Phase 3: Groups "
   file  = "instructions/03-groups.md"
   
   activities = {
