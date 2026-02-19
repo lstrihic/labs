@@ -26,7 +26,7 @@ resource "page" "groups" {
 }
 
 resource "page" "execution" {
-  title = "Phase 4: Execution"
+  title = "Phase 4: Execution "
   file  = "instructions/04-execution.md"
   
   activities = {
